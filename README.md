@@ -28,6 +28,20 @@ LapZero is a minimal-interaction setup and verification app for iRacing on Linux
 - **File access** — helps you find and work with iRacing's files in Documents inside the prefix
 - **Clear verdicts** — tells you plainly what's working, what isn't, and what to do about it
 
+## Screenshots
+
+**First run.**  Every step is listed before anything happens.
+
+![LapZero before setup starts](screenshots/setup.png)
+
+**Dry run.**  Shows what setup would do, without changing anything.
+
+![LapZero after a dry run](screenshots/dry-run.png)
+
+**Ready to race.**  After setup, LapZero opens on these checks, each with its own Check again button.
+
+![LapZero after setup, with every check passing](screenshots/ready.png)
+
 ## Install
 
 Download the package for your distro from the [latest release](https://github.com/DanFraserUK/LapZero/releases/latest), then install it from the folder you saved it to.
