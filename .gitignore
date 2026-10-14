@@ -1,0 +1,3 @@
+# Release packages are built here by publish-release.sh and uploaded to
+# GitHub Releases by send-release-to-github.sh. They are never committed.
+/dist/
