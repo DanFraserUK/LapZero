@@ -87,6 +87,23 @@ If iRacing ever wants to talk about Linux support, I want LapZero to be easy to 
 
 Only one thing.  If Steam or protontricks is missing, LapZero installs it with your distro's package manager.  On Fedora, that includes the RPM Fusion repos Steam comes from.  Your desktop's own password window asks first.  If everything's already installed, LapZero never asks for your password.
 
+When Steam or protontricks, or both, are missing, the following commands are constructed to attempt to install them:
+```
+pkexec /bin/sh -c 'pacman -S --noconfirm --needed steam protontricks'
+    OR
+pkexec /bin/sh -c 'dnf install -y "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"'
+pkexec /bin/sh -c 'dnf install -y steam protontricks'
+    OR
+pkexec /bin/sh -c 'apt-get update -qq && apt-get install -y pipx steam'
+```
+
+Dependent on the distribution of course and only missing required packages are in the generated command.  `pkexec` is using PolicyKit to elevate the command generated to request authorisation in the same way sudo does.
+
+Ubuntu/Debian installs protontricks via pipx using a regular user needing no password with:
+```
+pipx install protontricks
+```
+
 Everything else runs as you, and every step is logged.  The Logs page shows the lot.
 
 If LapZero finds the old EAC line from the setup script in `/etc/hosts`, it won't touch it.  It tells you where it is so you can take it out yourself.
