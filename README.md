@@ -85,7 +85,12 @@ If iRacing ever wants to talk about Linux support, I want LapZero to be easy to 
 
 ## What LapZero Does as Root
 
-Only one thing.  If Steam or protontricks is missing, LapZero installs it with your distro's package manager.  On Fedora, that includes the RPM Fusion repos Steam comes from.  Your desktop's own password window asks first.  If everything's already installed, LapZero never asks for your password.
+Only two things, and both are simple.  It installs packages that are missing, and it updates itself.
+Your desktop's own password window asks first, every time.
+
+### Missing packages
+
+If Steam or protontricks is missing, LapZero installs it with your distro's package manager.  On Fedora, that includes the RPM Fusion repos Steam comes from.  If everything's already installed, setup never asks for your password.
 
 When Steam or protontricks, or both, are missing, the following commands are constructed to attempt to install them:
 ```
@@ -104,9 +109,37 @@ Ubuntu/Debian installs protontricks via pipx using a regular user needing no pas
 pipx install protontricks
 ```
 
+### Updates
+
+LapZero checks for a new release when it starts.  If there is one, it downloads the package for your distro from this repo's Releases, into `~/.cache/lapzero/updates/`.  It checks the package against the SHA-256 GitHub publishes for it, once when it's downloaded and again just before installing.
+
+Nothing is installed until you click **Update now**.  The Updates page shows the exact command first.  It's one of these:
+```
+pkexec pacman -U --noconfirm ~/.cache/lapzero/updates/<package>
+    OR
+pkexec dnf install -y ~/.cache/lapzero/updates/<package>
+    OR
+pkexec apt-get install -y ~/.cache/lapzero/updates/<package>
+```
+
+`<package>` is the file from the release, like `lapzero-<version>-ubuntu-24.04-x86_64.deb`.  Once it's installed, LapZero restarts.
+
 Everything else runs as you, and every step is logged.  The Logs page shows the lot.
 
 If LapZero finds the old EAC line from the setup script in `/etc/hosts`, it won't touch it.  It tells you where it is so you can take it out yourself.
+
+To take it out, open `/etc/hosts` in an editor with root access, with one of these:
+```
+sudo nano /etc/hosts
+    OR
+sudo vim /etc/hosts
+    OR
+kate /etc/hosts
+    OR
+gedit admin:///etc/hosts
+```
+
+Kate and gedit ask for your password when you save.  The line to take out is `0.0.0.0 modules-cdn.eac-prod.on.epicgames.com`.  Delete it, or put a `#` at the start of it.
 
 ## Contributing
 
