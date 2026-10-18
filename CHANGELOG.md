@@ -2,6 +2,10 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.10.18
+
+- Updates don't download anything until you click Update now.  The sidebar says when one's available, and the button shows the download's progress.
+
 ## v2026.10.17
 
 - Launch iRacing button at the top of the sidebar.  It's grey until setup's finished, then green to start iRacing.

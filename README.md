@@ -111,9 +111,9 @@ pipx install protontricks
 
 ### Updates
 
-LapZero checks for a new release when it starts.  If there is one, it downloads the package for your distro from this repo's Releases, into `~/.cache/lapzero/updates/`.  It checks the package against the SHA-256 GitHub publishes for it, once when it's downloaded and again just before installing.
+LapZero checks for a new release when it starts.  If there is one, the sidebar says so.  Nothing is downloaded yet.
 
-Nothing is installed until you click **Update now**.  The Updates page shows the exact command first.  It's one of these:
+The Updates page shows the exact command first.  When you click **Update now**, LapZero downloads the package for your distro from this repo's Releases, into `~/.cache/lapzero/updates/`.  It checks the package against the SHA-256 GitHub publishes for it, once when it's downloaded and again just before installing.  Then it runs the command.  It's one of these:
 ```
 pkexec pacman -U --noconfirm ~/.cache/lapzero/updates/<package>
     OR
