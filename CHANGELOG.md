@@ -2,6 +2,10 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.10.18.1
+
+- The Updates page puts Update now first, then says step by step what it does, with the exact command it runs to install.
+
 ## v2026.10.18
 
 - Updates don't download anything until you click Update now.  The sidebar says when one's available, and the button shows the download's progress.
