@@ -2,6 +2,10 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.10.18.3
+
+- The Launch iRacing button dims to blue while iRacing is starting or running, and does nothing until it closes.
+
 ## v2026.10.18.1
 
 - The Updates page puts Update now first, then says step by step what it does, with the exact command it runs to install.
