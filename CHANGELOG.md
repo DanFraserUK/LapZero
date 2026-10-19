@@ -2,6 +2,10 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.10.19
+
+- Fixed: with iRacing in your Steam library but not installed, setup said it wasn't in your library at all.  It now asks whether it's in your library or you have a key to redeem, and only opens the key window if you have a key.
+
 ## v2026.10.18.3
 
 - The Launch iRacing button dims to blue while iRacing is starting or running, and does nothing until it closes.
