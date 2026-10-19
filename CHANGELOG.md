@@ -2,6 +2,13 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.10.19.1
+
+- While iRacing is running, LapZero waits.  Setup, checks, installing programs and updates hold off until it closes, and a banner says why.  Its Close iRacing button asks iRacing to close, and forces it if it's still open after 15 seconds.
+- Launch iRacing waits while setup or an install is running.
+- Hardware detection finds SimPro Manager 3 when it's on the Additional programs page.
+- Fixed: a program added with Find programs already installed could be started with a stray empty argument, which also broke its desktop shortcut.
+
 ## v2026.10.19
 
 - Fixed: with iRacing in your Steam library but not installed, setup said it wasn't in your library at all.  It now asks whether it's in your library or you have a key to redeem, and only opens the key window if you have a key.
