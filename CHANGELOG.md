@@ -2,6 +2,16 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.10.27.1
+
+- New Overview page: the Proton build iRacing runs on, the iRacing install, its prefix, Steam and LapZero, at a glance.  It looks them up when you click Look up.
+- Setup lists your Steam libraries with their free space when iRacing needs installing, suggests one, and opens Steam's install window to pick it in.
+- Closing LapZero while a program installs no longer crashes it.  Closing stops everything LapZero started, including the installer.
+- Stop now stops setup's Proton build download.
+- Fixed: the launch options check said they didn't match when you'd added settings of your own in front, like `PROTON_ENABLE_HIDRAW` for a Simagic base.  Those are kept now, and in the text to copy.
+- Fixed: setup could wait forever when iRacing was installed to another Steam library.
+- Clearer messages when a package install fails, and on RHEL-based systems.
+
 ## v2026.10.27
 
 - When a newer LapZero Proton build is out, a teal note in the sidebar says so.  Its page shows what's changed, downloads it only when you click, installs it beside your current build, and shows you how to switch iRacing to it in Steam.
