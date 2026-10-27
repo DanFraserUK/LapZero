@@ -2,6 +2,11 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.10.27
+
+- When a newer LapZero Proton build is out, a teal note in the sidebar says so.  Its page shows what's changed, downloads it only when you click, installs it beside your current build, and shows you how to switch iRacing to it in Steam.
+- The update page lists what's new in every version since yours, so you can see why it's worth updating.
+
 ## v2026.10.19.1
 
 - While iRacing is running, LapZero waits.  Setup, checks, installing programs and updates hold off until it closes, and a banner says why.  Its Close iRacing button asks iRacing to close, and forces it if it's still open after 15 seconds.
