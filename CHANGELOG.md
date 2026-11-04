@@ -2,15 +2,25 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.11.04
+
+- Setup now checks the Proton build download against the SHA-256 GitHub gives for it.  If they don't match, the download is removed and setup asks you to download it yourself.
+- Clearer message when setup can't reach GitHub.  It says what GitHub's web page and API each answered.
+
 ## v2026.10.27.1
 
-- New Overview page: the Proton build iRacing runs on, the iRacing install, its prefix, Steam and LapZero, at a glance.  It looks them up when you click Look up.
+- New Overview page: the Proton build iRacing runs on, the iRacing install, its prefix, Steam and LapZero, at a glance.  It looks them up when you click Refresh info, and keeps what it found for next time.
+- New Proton builds page, from the Setup page.  It removes old LapZero Proton builds, but not the one iRacing is set to.
+- Hardware detection now recognises Thrustmaster (with hid-tmff2), Cammus, Asetek SimSports, VRS, FFBeast, PXN, Turtle Beach and OpenFFBoard, and says which kernel each needs.
 - Setup lists your Steam libraries with their free space when iRacing needs installing, suggests one, and opens Steam's install window to pick it in.
 - Closing LapZero while a program installs no longer crashes it.  Closing stops everything LapZero started, including the installer.
 - Stop now stops setup's Proton build download.
 - Fixed: the launch options check said they didn't match when you'd added settings of your own in front, like `PROTON_ENABLE_HIDRAW` for a Simagic base.  Those are kept now, and in the text to copy.
 - Fixed: setup could wait forever when iRacing was installed to another Steam library.
 - Clearer messages when a package install fails, and on RHEL-based systems.
+- Fixed: setup said Steam was logged in after you'd signed out.
+- Fixed: on Debian, Ubuntu and Linux Mint, setup asked for the wrong Steam package and didn't turn on 32-bit support first, so installing Steam failed.
+- Lighter Proton logging.  LapZero's launch options now keep only Wine's errors in the Proton log.  The old ones logged so much that one iRacing session's log came to 243 MB.  The launch options check tells you if you have the old ones, and gives you the new text to paste.
 
 ## v2026.10.27
 
