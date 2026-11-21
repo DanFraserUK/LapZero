@@ -2,6 +2,14 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.11.21.1
+
+- The EAC Linux v2 checks are open to everyone, as a read-only preview.  See how ready your PC is for Easy Anti-Cheat Linux v2.  LapZero changes nothing.  The Check signed boot files button reads your EAC kernel's and loader's signatures, and the TPM's boot record, after showing you every command it runs.
+- The checks follow CachyOS's own EAC checks, including Setup Mode, module signatures, the EAC kernel settings, devices that bypass the IOMMU, and your distro's EAC key in the firmware.  CachyOS counts as accepted by EAC, on CachyOS's word, until Epic publishes its list.
+- Launch iRacing shows an Offline only tag.  iRacing's servers don't accept Linux yet, so it's test drives, AI races and replays for now.
+- Setup shows the full command before it asks for your password to install packages.
+- Overview: iRacing's launch options show in their own box, so a long set no longer makes the page scroll sideways.
+
 ## v2026.11.21
 
 - Programs on the Additional programs page can carry a note on how to use them.  Open it with the arrow under "How to start it".  LapZero-FFB is now a known program, with the order to start it in alongside SimPro.

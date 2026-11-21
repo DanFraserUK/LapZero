@@ -86,8 +86,8 @@ If iRacing ever wants to talk about Linux support, I want LapZero to be easy to 
 
 ## What LapZero Does as Root
 
-Only two things, and both are simple.  It installs packages that are missing, and it updates itself.
-Your desktop's own password window asks first, every time.
+Only three things, and all are simple.  It installs packages that are missing, it updates itself, and, when you click for it, it reads your boot files' signatures for the EAC Linux v2 checks.
+LapZero shows you the full command first.  Then your desktop's own password window asks, every time.
 
 ### Missing packages
 
@@ -126,6 +126,15 @@ pkexec apt-get install -y ~/.cache/lapzero/updates/<package>
 `<package>` is the file from the release, like `lapzero-<version>-ubuntu-24.04-x86_64.deb`.  Once it's installed, LapZero restarts.
 
 On Bazzite, LapZero can't update itself yet.  The Updates page says so, and gives the command to run by hand after downloading the new package: `rpm-ostree uninstall lapzero --install ./<package>`, then restart the PC.
+
+### Reading boot files for the EAC Linux v2 checks
+
+The EAC Linux v2 page is read-only for now.  Its **Check signed boot files** button reads two things only root can: the signatures on your distro's EAC kernel and the loader that starts it, and the TPM's record of how this boot started.  It lists every command first, then runs:
+```
+pkexec /usr/lib/lapzero/lapzero-eac-inspect [--eventlog] <boot files>
+```
+
+The helper only reads.  It runs `sbverify --list` on each file, and `tpm2_eventlog` on the boot record, and nothing else.  It refuses any file outside `/boot`, `/efi` and `/boot/efi`.  It uses sbsigntools and tpm2-tools if you have them, and never installs them.
 
 Everything else runs as you, and every step is logged.  The Logs page shows the lot.
 
