@@ -53,6 +53,7 @@ Download the package for your distro from the [latest release](https://github.co
 | Ubuntu 24.04, Linux Mint 22 | `lapzero-<version>-ubuntu-24.04-x86_64.deb` | `sudo apt install ./lapzero-*-ubuntu-24.04-x86_64.deb` |
 | Ubuntu 22.04, Linux Mint 21 | `lapzero-<version>-ubuntu-22.04-x86_64.deb` | `sudo apt install ./lapzero-*-ubuntu-22.04-x86_64.deb` |
 | Debian 12 | `lapzero-<version>-debian-12-x86_64.deb` | `sudo apt install ./lapzero-*-debian-12-x86_64.deb` |
+| Bazzite (not fully tested) | `lapzero-<version>-fedora-x86_64.rpm` | `rpm-ostree install ./lapzero-*-fedora-x86_64.rpm`, then restart the PC |
 
 Then open **LapZero** from your app menu.  `SHA256SUMS` in each release lets you check the download.
 
@@ -123,6 +124,8 @@ pkexec apt-get install -y ~/.cache/lapzero/updates/<package>
 ```
 
 `<package>` is the file from the release, like `lapzero-<version>-ubuntu-24.04-x86_64.deb`.  Once it's installed, LapZero restarts.
+
+On Bazzite, LapZero can't update itself yet.  The Updates page says so, and gives the command to run by hand after downloading the new package: `rpm-ostree uninstall lapzero --install ./<package>`, then restart the PC.
 
 Everything else runs as you, and every step is logged.  The Logs page shows the lot.
 

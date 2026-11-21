@@ -2,6 +2,12 @@
 
 What's new in each LapZero release, newest first.
 
+## v2026.11.21
+
+- Programs on the Additional programs page can carry a note on how to use them.  Open it with the arrow under "How to start it".  LapZero-FFB is now a known program, with the order to start it in alongside SimPro.
+- Bazzite: setup now runs, using the Steam and protontricks Bazzite already has.  It's only been tried by one tester so far, so setup says so first.  LapZero can't update itself on Bazzite yet: the Updates page gives the command to run by hand.
+- Setup keeps the iRacing installer's log where a Flatpak protontricks can reach it, so the log is there on Bazzite too.
+
 ## v2026.11.04
 
 - Setup now checks the Proton build download against the SHA-256 GitHub gives for it.  If they don't match, the download is removed and setup asks you to download it yourself.
